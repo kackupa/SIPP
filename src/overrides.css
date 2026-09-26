@@ -39,4 +39,5 @@
 .treasury-main,.treasury-story,.treasury .section-title,.roll-line,.treasury-objective{position:relative;z-index:1}
 .roundtable-art{left:42%;right:auto;width:58%;opacity:.3;mask-image:linear-gradient(90deg,transparent,#000 34%,#000)}
 .roundtable .agents,.roundtable .section-title,.roundtable-intro{position:relative;z-index:1}
-@media(max-width:720px){.treasury-art,.roundtable-art{position:relative;inset:auto;width:100%;height:180px;margin:0 0 20px;opacity:.5;mask-image:none}.roundtable-art{left:auto}.treasury-art img,.roundtable-art img{object-position:center}}
+.token{position:relative;overflow:hidden}.token-art{position:absolute;right:0;top:0;width:46%;height:100%;overflow:hidden;opacity:.18;pointer-events:none;mask-image:linear-gradient(90deg,transparent,#000 34%,#000)}.token-art img{width:100%;height:100%;object-fit:cover;mix-blend-mode:screen}.token>.section-title,.token-lede,.token-grid,.tbc-box{position:relative;z-index:1}
+@media(max-width:720px){.treasury-art,.roundtable-art,.token-art{position:relative;inset:auto;left:auto;width:100%;height:180px;margin:0 0 20px;opacity:.5;mask-image:none}.treasury-art img,.roundtable-art img,.token-art img{object-position:center}}
