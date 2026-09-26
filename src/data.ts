@@ -1,0 +1,11 @@
+export const metrics = [ ['Treasury', '$0.00'], ['Lifetime Revenue', '$0.00'], ['Products Live', '0'], ['Products Building', '3'] ];
+export const treasury = [['Treasury value','$0'],['Lifetime revenue','$0'],['Trading fees','$0'],['Product fees','$0'],['Starting value','$0']];
+export const products = [
+  { name:'ARB Launchpad', status:'BUILDING', tone:'green', image:'/assets/arb-launchpad.jpg', description:'An ARB Launchpad for KAC KUPA first: multiple liquidity markets, connected to same-chain and cross-chain arbitrage infrastructure.', kind:'network' },
+  { name:'Degen Karts', status:'PROTOTYPE', tone:'yellow', image:'/assets/degen-karts.jpg', description:'A crypto kart-racing game for us first — then a configurable engine for communities with their own avatars, brands and tokens.', kind:'image' },
+  { name:'Caesar Engine', status:'PROTOTYPE', tone:'yellow', image:'/assets/caesar-engine.jpg', description:'A browser-based city-building and economic game, designed to become a moddable world for other communities.', kind:'image' },
+  { name:'The Round Table', status:'PLANNED', tone:'muted', image:'/assets/round-table.jpg', description:'Twelve autonomous agents intended to keep the ecosystem active: researching, monitoring, debating and surfacing opportunities.', kind:'agents' }
+];
+export const agents = Array.from({length:12},(_,i)=>({id:i+1, role:'ROLE TBD'}));
+export const buildLog = [{date:'26 SEPTEMBER 2026', items:['KAC KUPA ecosystem model defined','ARB Launchpad architecture defined','Initial products grouped under KAC KUPA','12-agent Round Table added to ecosystem plan','Public shopwindow development started']}];
+export const principles = [['BUILD FOR OURSELVES FIRST','We should never need outside users for a product to make sense.'],['PRODUCTISE WHAT WORKS','If something proves useful for KAC KUPA, make it configurable so others can use it too.'],['TAKE A CUT','KAC KUPA earns a platform fee from products built on its infrastructure.'],['ADD REVENUE ENGINES','Every useful new module should have the potential to become another source of treasury revenue.'],['KEEP BUILDING','The system is modular. New products can be added without changing the basic thesis.']];
