@@ -1,0 +1,17 @@
+.product.featured{grid-column:1/-1;border-color:#4d6b42}
+.visual.network{position:relative;inset:auto}
+.product.featured .visual{height:clamp(300px,34vw,540px);aspect-ratio:auto}
+.product-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.product-details{border-top:1px solid var(--line);padding:17px 22px 20px;display:flex;gap:20px;align-items:flex-start}
+.product-details>span{font:9px 'DM Mono';color:var(--green);min-width:90px}
+.product-details p{margin:0;color:#a6b0a5;font-size:12px;line-height:1.5}
+.treasury-story,.roundtable-intro{max-width:760px;color:#b3beb3;line-height:1.6;font-size:15px;margin:0 0 32px}
+.product-actions{grid-column:2;display:flex;gap:16px;justify-content:flex-end;align-items:center;flex-wrap:wrap}
+.product-actions a{font:10px 'DM Mono';color:var(--green);display:flex;gap:5px;align-items:center}
+.external-cta{border:1px solid var(--green);padding:9px 10px}
+.external-cta:hover{background:var(--green);color:#090b0a!important}
+.token,.transparency{padding:72px 32px;border-top:1px solid var(--line)}
+.token{background:#10150f}.token-lede{max-width:780px;color:#b3beb3;font-size:17px;line-height:1.6;margin:0 0 30px}.token-grid,.trust-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line)}
+.token-grid div,.trust-grid div{background:#10150f;padding:20px}.token-grid span{display:block;font:9px 'DM Mono';color:var(--green);margin-bottom:18px}.token-grid b{font:13px 'DM Mono';line-height:1.35;color:#dce8da}.tbc-box{border:1px solid #4d6b42;margin-top:24px;padding:22px}.tbc-box strong{display:block;color:var(--green);font-size:20px;font-weight:500}.tbc-box p{font:10px 'DM Mono';color:var(--muted);margin:14px 0 0}.trust-grid{grid-template-columns:repeat(4,1fr);margin-bottom:34px}.trust-grid div{background:#090b0a;min-height:132px}.trust-grid h3{font-size:13px;margin:0 0 12px;color:var(--green);font-weight:500}.trust-grid p{font-size:12px;color:var(--muted);line-height:1.5;margin:0}.transparency blockquote{border-left:2px solid var(--green);padding:3px 0 3px 22px;max-width:850px;margin:0;color:#e9eee8;font-size:19px;line-height:1.5}
+@media(max-width:720px){.product-actions{display:block}.product-actions a{justify-content:flex-start;margin-top:12px}.token,.transparency{padding:55px 20px}.token-grid,.trust-grid{grid-template-columns:1fr}.tbc-box strong{font-size:17px}.transparency blockquote{font-size:16px}}
+@media(max-width:720px){.product.featured{grid-column:auto}.product-details{display:block}.product-details>span{display:block;margin-bottom:10px}}
