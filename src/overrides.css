@@ -1,6 +1,10 @@
 .product.featured{grid-column:1/-1;border-color:#4d6b42}
 .visual.network{position:relative;inset:auto}
 .product.featured .visual{height:clamp(300px,34vw,540px);aspect-ratio:auto}
+.visual.network{background:radial-gradient(circle at 50% 48%,#1a2a17 0,#101610 28%,#0b100c 72%)}
+.visual.network:after{content:'MULTI-CHAIN POOLS  →  ARB BOT  →  TRADING VOLUME  →  CREATOR FEES';position:absolute;bottom:18px;right:18px;color:#71866c;font:9px 'DM Mono';letter-spacing:.04em}
+.visual.network .arb-node{box-shadow:0 0 0 8px #b8ff5c08,0 0 32px #b8ff5c33}
+.visual.network .chain i{box-shadow:0 0 12px #b8ff5c99}
 .product-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .product-details{border-top:1px solid var(--line);padding:17px 22px 20px;display:flex;gap:20px;align-items:flex-start}
 .product-details>span{font:9px 'DM Mono';color:var(--green);min-width:90px}
