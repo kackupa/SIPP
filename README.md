@@ -13,7 +13,7 @@ Build the production site with `npm run build` and preview it with `npm run prev
 
 ## GitHub Pages
 
-The included GitHub Actions workflow builds and deploys on pushes to `main`. Vite is configured with `/SIPP/` as its base path for `https://kackupa.github.io/SIPP/`. In repository settings, set Pages → Source to **GitHub Actions**.
+The included GitHub Actions workflow builds and deploys on pushes to `main`. Vite is configured with `/srajtasma/` as its base path for `https://kackupa.github.io/srajtasma/`. In repository settings, set Pages → Source to **GitHub Actions**.
 
 ## Editing content
 
