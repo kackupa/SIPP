@@ -6,6 +6,8 @@
 .visual.network .arb-node{box-shadow:0 0 0 8px #b8ff5c08,0 0 32px #b8ff5c33}
 .visual.network .chain i{box-shadow:0 0 12px #b8ff5c99}
 .product-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.visual.degen-karts .product-image{object-fit:contain;background:#101626}
+.visual.caesar-engine .product-image{object-position:center 8%}
 .product-details{border-top:1px solid var(--line);padding:17px 22px 20px;display:flex;gap:20px;align-items:flex-start}
 .product-details>span{font:9px 'DM Mono';color:var(--green);min-width:90px}
 .product-details p{margin:0;color:#a6b0a5;font-size:12px;line-height:1.5}
