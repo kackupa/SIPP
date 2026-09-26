@@ -6,6 +6,13 @@
 .product-details>span{font:9px 'DM Mono';color:var(--green);min-width:90px}
 .product-details p{margin:0;color:#a6b0a5;font-size:12px;line-height:1.5}
 .treasury-story,.roundtable-intro{max-width:760px;color:#b3beb3;line-height:1.6;font-size:15px;margin:0 0 32px}
+.goal{padding:72px 32px;border-top:1px solid var(--line)}
+.goal-flow,.goal-progress{border:1px solid var(--line);padding:22px;color:var(--green);font:11px 'DM Mono';line-height:1.8;margin-bottom:12px;word-spacing:8px}
+.goal-progress{color:#dce8da;background:#10150f}
+.goal-flow span,.goal-progress span,.global-rule span{color:var(--green);word-spacing:0}
+.goal-copy{max-width:760px;color:#b3beb3;line-height:1.6;font-size:15px;margin:28px 0 16px}.goal-final{max-width:760px;color:var(--green);font-size:18px;line-height:1.5;margin:0}
+.global-rule{border:1px solid #4d6b42;color:var(--green);padding:16px 18px;margin:0 0 24px;font:11px 'DM Mono';letter-spacing:.04em;text-align:center}
+@media(max-width:720px){.goal{padding:55px 20px}.goal-flow,.goal-progress{word-spacing:3px}.global-rule{text-align:left;line-height:1.8}}
 .product-actions{grid-column:2;display:flex;gap:16px;justify-content:flex-end;align-items:center;flex-wrap:wrap}
 .product-actions a{font:10px 'DM Mono';color:var(--green);display:flex;gap:5px;align-items:center}
 .external-cta{border:1px solid var(--green);padding:9px 10px}
