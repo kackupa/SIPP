@@ -1,6 +1,6 @@
 .product.featured{grid-column:1/-1;border-color:#4d6b42}
 .visual.network{position:relative;inset:auto}
-.product.featured .visual{height:clamp(300px,34vw,540px);aspect-ratio:auto}
+.product.featured .visual{height:auto;aspect-ratio:1672/941}
 .visual.network{background:radial-gradient(circle at 50% 48%,#1a2a17 0,#101610 28%,#0b100c 72%)}
 .visual.network:after{content:'MULTI-CHAIN POOLS  →  ARB BOT  →  TRADING VOLUME  →  CREATOR FEES';position:absolute;bottom:18px;right:18px;color:#71866c;font:9px 'DM Mono';letter-spacing:.04em}
 .visual.network .arb-node{box-shadow:0 0 0 8px #b8ff5c08,0 0 32px #b8ff5c33}
@@ -46,3 +46,24 @@
 @media(prefers-reduced-motion:reduce){.network-lines .roll{display:none}}
 .network{inset:26px 28px 37px}.network-lines path.tube{stroke:#7f9d73;stroke-width:1.1;stroke-dasharray:2.5 1.2;opacity:.75;filter:drop-shadow(0 0 2px #b8ff5c88)}.network-lines .roll{fill:#ead39c;stroke:#8e7548;stroke-width:.35;filter:drop-shadow(0 0 3px #b8ff5caa)}.network-lines .roll-hole{fill:#382d1d;stroke:none}.network .arb-node{top:50%;width:92px;height:92px;background:#101711;overflow:visible}.network .arb-node img{position:absolute;width:58px;height:58px;object-fit:cover;image-rendering:pixelated;top:-42px;left:17px;border:1px solid var(--green);border-radius:50%;box-shadow:0 0 18px #b8ff5c55}.network .arb-node span{margin-top:20px}.network .c0{left:-1%;top:17%}.network .c1{right:-1%;top:17%}.network .c2{left:-1%;bottom:2%}.network .c3{right:-1%;bottom:2%}.network .chain{min-width:125px}.network .chain i{box-shadow:0 0 12px #b8ff5c99}.network .c2 small{color:#b8ff5c}.soon{bottom:12px}
 @media(max-width:720px){.network{inset:24px 12px 35px}.network .arb-node{width:72px;height:72px;font-size:9px}.network .arb-node img{width:45px;height:45px;left:13px;top:-32px}.network .arb-node span{margin-top:14px}.network .chain{min-width:92px;font-size:8px}.network .chain small{font-size:7px}.network .c0,.network .c2{left:-4%}.network .c1,.network .c3{right:-4%}.network-lines path.tube{stroke-width:.9}.soon{font-size:8px}}
+.product.featured .product-image{object-fit:contain}
+.arb-art-motion{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;overflow:hidden}
+.arb-arm-flick{transform-box:view-box;animation:arb-left-flick 3.8s ease-in-out infinite}.arb-arm-left{transform-origin:784px 322px}.arb-arm-right{transform-origin:907px 329px;animation-name:arb-right-flick;animation-duration:4.15s;animation-delay:.7s}
+.arb-arm-flick image{image-rendering:pixelated}
+.arb-toss{fill:#f3dfb6;stroke:#8f6b42;stroke-width:3;filter:drop-shadow(0 0 9px #c7ff89);animation:arb-toss-appear 3.8s linear infinite}
+.arb-toss-right{animation-duration:4.15s;animation-delay:.7s}.arb-toss-end{fill:#e7cc9f}.arb-toss .arb-packet-hole{fill:#3c2b1c;stroke:none}
+.arb-trace{fill:none;stroke:#adff65;stroke-width:4;stroke-linecap:round;stroke-dasharray:8 26;opacity:.22;filter:drop-shadow(0 0 7px #9aff5d);animation:arb-current 4s ease-in-out infinite}
+.arb-packet{fill:#f3dfb6;stroke:#8f6b42;stroke-width:2;filter:drop-shadow(0 0 6px #c7ff89);animation:arb-roll-bob 1s ease-in-out infinite alternate}
+.arb-packet-hole{fill:#3c2b1c;stroke:none}.arb-packet-return{opacity:.66;animation-delay:.5s}
+.arb-arrival{fill:none;stroke:#b8ff5c;stroke-width:5;opacity:0;transform-box:fill-box;transform-origin:center;animation:arb-arrive 4s ease-out infinite}
+.arb-arrival-base{animation-delay:.7s}.arb-arrival-solana{animation-delay:1.4s}.arb-arrival-ethereum{animation-delay:2.1s}
+.arb-throw{fill:none;stroke:#dfff9b;stroke-width:5;stroke-linecap:round;filter:drop-shadow(0 0 6px #b8ff5c);animation:arb-hand-flash 3.8s ease-out infinite}
+.arb-throw-right{animation-delay:.7s}
+@keyframes arb-current{50%{opacity:.48;stroke-dashoffset:-17}}
+@keyframes arb-roll-bob{to{filter:drop-shadow(0 0 10px #c7ff89)}}
+@keyframes arb-arrive{0%,80%{opacity:0;transform:scale(.78)}88%{opacity:.7}100%{opacity:0;transform:scale(1.2)}}
+@keyframes arb-hand-flash{0%,10%,100%{opacity:0}14%,25%{opacity:.85}35%{opacity:0}}
+@keyframes arb-left-flick{0%,7%,38%,100%{transform:rotate(0)}14%{transform:rotate(14deg)}24%{transform:rotate(-15deg)}}
+@keyframes arb-right-flick{0%,7%,38%,100%{transform:rotate(0)}14%{transform:rotate(-14deg)}24%{transform:rotate(15deg)}}
+@keyframes arb-toss-appear{0%,8%,30%,100%{opacity:0}11%,23%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.arb-packet,.arb-throw,.arb-arrival,.arb-arm-flick,.arb-toss{display:none}.arb-trace{animation:none;opacity:.18}}

@@ -6,7 +6,44 @@ import './styles.css';
 import './overrides.css';
 
 type Product = (typeof products)[number];
-function ProductVisual({ product }: { product: Product }) { const [visible, setVisible] = React.useState(true); const src = `${import.meta.env.BASE_URL}${product.image.replace(/^\//, '')}`; return <div className={'visual ' + product.kind}><div className="visual-label">PRODUCT SNAPSHOT <span>/{product.image.replace('/assets/', '')}</span></div>{visible && <img className="product-image" src={src} alt={`${product.name} preview`} onError={() => setVisible(false)} />}{!visible && product.kind === 'network' && <><div className="network"><svg className="network-lines" viewBox="0 0 100 100" aria-hidden="true"><path className="tube" d="M 12 27 L 50 50" /><path className="tube" d="M 88 27 L 50 50" /><path className="tube" d="M 12 78 L 50 50" /><path className="tube" d="M 88 78 L 50 50" />{['M 12 27 L 50 50', 'M 88 27 L 50 50', 'M 12 78 L 50 50', 'M 88 78 L 50 50'].map((path, i) => <g className="roll" key={path}><rect x="-3" y="-2" width="6" height="4" rx="1" /><ellipse rx="1" ry=".75" className="roll-hole" /><animateMotion dur={`${3.2 + i * .35}s`} begin={`${i * .55}s`} repeatCount="indefinite" path={path} /></g>)}</svg><div className="arb-node"><img src={`${import.meta.env.BASE_URL}favicon.png`} alt="" /><span>ARB<br /><b>BOT</b></span></div>{['ROBINHOOD CHAIN', 'BASE', 'SOLANA', 'ETHEREUM L1'].map((chain, i) => <div className={'chain c' + i} key={chain}><i />{chain}<small>{chain === 'SOLANA' ? 'COMING SOON' : 'KACKUPA MARKET'}</small></div>)}</div><div className="soon">MARKETS <span>→ ARB → VOLUME → CREATOR FEES</span></div></>}{!visible && product.kind === 'agents' && <div className="agent-preview">{agents.slice(0, 6).map(agent => <span key={agent.id}>AGENT {String(agent.id).padStart(2, '0')}</span>)}</div>}{!visible && product.kind === 'image' && <div className="empty-shot"><span>SCREENSHOT<br />PLACEHOLDER</span><small>16:9 / ASSET READY</small></div>}</div>; }
+const arbRoutes = [
+  { out: 'M 721 245 C 643 346 535 272 449 296 S 359 292 323 288', back: 'M 323 288 C 372 282 406 301 449 296 C 535 272 643 346 721 245' },
+  { out: 'M 965 283 C 1030 354 1120 252 1260 247 S 1350 251 1382 251', back: 'M 1382 251 C 1335 254 1300 244 1260 247 C 1120 252 1030 354 965 283' },
+  { out: 'M 758 451 C 625 487 565 605 444 630 S 304 650 241 648', back: 'M 241 648 C 310 650 365 636 444 630 C 565 605 625 487 758 451' },
+  { out: 'M 917 451 C 1049 510 1114 613 1239 637 S 1370 648 1432 646', back: 'M 1432 646 C 1364 649 1290 645 1239 637 C 1114 613 1049 510 917 451' },
+];
+function ArbArtworkMotion({ src }: { src: string }) {
+  return <svg className="arb-art-motion" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <defs>
+      <clipPath id="arb-left-hand"><path d="M 701 211 L 735 210 L 758 256 L 749 278 L 792 317 L 786 339 L 768 336 L 730 291 L 701 281 L 681 250 Z" /></clipPath>
+      <clipPath id="arb-right-hand"><path d="M 950 250 L 985 252 L 1004 277 L 998 310 L 971 326 L 941 312 L 912 339 L 896 327 L 931 281 Z" /></clipPath>
+    </defs>
+    <g className="arb-arm-flick arb-arm-left"><image href={src} width="1672" height="941" clipPath="url(#arb-left-hand)" /></g>
+    <g className="arb-arm-flick arb-arm-right"><image href={src} width="1672" height="941" clipPath="url(#arb-right-hand)" /></g>
+    <g className="arb-toss arb-toss-left"><rect x="-21" y="-24" width="42" height="48" rx="12" /><ellipse cx="0" cy="-18" rx="15" ry="7" className="arb-toss-end" /><ellipse cx="0" cy="-18" rx="6" ry="3" className="arb-packet-hole" /><animateMotion dur="3.8s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;.3;1" path="M 720 236 Q 621 138 552 302" /></g>
+    <g className="arb-toss arb-toss-right"><rect x="-21" y="-24" width="42" height="48" rx="12" /><ellipse cx="0" cy="-18" rx="15" ry="7" className="arb-toss-end" /><ellipse cx="0" cy="-18" rx="6" ry="3" className="arb-packet-hole" /><animateMotion dur="4.15s" begin=".7s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;.3;1" path="M 965 282 Q 1064 157 1126 276" /></g>
+    {arbRoutes.map((route, index) => <React.Fragment key={route.out}>
+      <path className="arb-trace" d={route.out} />
+      <g className="arb-packet arb-packet-out"><rect x="-15" y="-11" width="30" height="22" rx="5" /><ellipse cx="8" rx="4" ry="7" className="arb-packet-hole" /><animateMotion dur={`${3.8 + index * .35}s`} begin={`${index * .7}s`} repeatCount="indefinite" path={route.out} /></g>
+      <g className="arb-packet arb-packet-return"><rect x="-10" y="-8" width="20" height="16" rx="4" /><ellipse cx="5" rx="3" ry="5" className="arb-packet-hole" /><animateMotion dur={`${5.4 + index * .45}s`} begin={`${index * .9}s`} repeatCount="indefinite" path={route.back} /></g>
+    </React.Fragment>)}
+    <g className="arb-throw arb-throw-left"><circle cx="722" cy="246" r="13" /><path d="M 701 250 L 690 250 M 718 224 L 718 214 M 742 239 L 752 234" /></g>
+    <g className="arb-throw arb-throw-right"><circle cx="965" cy="287" r="13" /><path d="M 986 291 L 997 291 M 967 265 L 967 255 M 944 278 L 934 273" /></g>
+    {[['robinhood', 323, 288], ['base', 1382, 251], ['solana', 241, 648], ['ethereum', 1432, 646]].map(([chain, x, y]) => <circle className={`arb-arrival arb-arrival-${chain}`} key={chain} cx={x} cy={y} r="53" />)}
+  </svg>;
+}
+function ProductVisual({ product }: { product: Product }) {
+  const [visible, setVisible] = React.useState(true);
+  const src = `${import.meta.env.BASE_URL}${product.image.replace(/^\//, '')}`;
+  return <div className={'visual ' + product.kind + (visible && product.kind === 'network' ? ' has-image' : '')}>
+    {product.kind !== 'network' || !visible ? <div className="visual-label">PRODUCT SNAPSHOT <span>/{product.image.replace('/assets/', '')}</span></div> : null}
+    {visible && <img className="product-image" src={src} alt={`${product.name} preview`} onError={() => setVisible(false)} />}
+    {visible && product.kind === 'network' && <ArbArtworkMotion src={src} />}
+    {!visible && product.kind === 'network' && <div className="empty-shot"><span>ARB LAUNCHPAD</span><small>ARTWORK UNAVAILABLE</small></div>}
+    {!visible && product.kind === 'agents' && <div className="agent-preview">{agents.slice(0, 6).map(agent => <span key={agent.id}>AGENT {String(agent.id).padStart(2, '0')}</span>)}</div>}
+    {!visible && product.kind === 'image' && <div className="empty-shot"><span>SCREENSHOT<br />PLACEHOLDER</span><small>16:9 / ASSET READY</small></div>}
+  </div>;
+}
 const SectionTitle = ({ eyebrow, title, children }: { eyebrow: string; title: string; children?: React.ReactNode }) => <div className="section-title"><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2></div>{children}</div>;
 function App() { const [open, setOpen] = React.useState(false); return <><header><a className="brand" href="#top"><img src={`${import.meta.env.BASE_URL}favicon.png`} alt="" />KAC<span>KUPA</span></a><button className="menu" onClick={() => setOpen(!open)} aria-label="Toggle navigation">{open ? <X /> : <Menu />}</button><nav className={open ? 'open' : ''}>{[['Treasury', '#treasury'], ['Goal', '#goal'], ['Products', '#products'], ['Token TBC', '#token'], ['Round Table', '#roundtable'], ['Build Log', '#build-log']].map(([label, href]) => <a href={href} onClick={() => setOpen(false)} key={label}>{label}</a>)}<a href="https://github.com/kackupa/srajtasma" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14} /></a></nav></header>
 <main id="top">
